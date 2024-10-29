@@ -21,11 +21,18 @@ function countDown() {
   state.values.curretTime--;
   state.view.timeLeft.textContent = state.values.curretTime;
 
-  if (state.values.currentTime <= 0) {
+  if (state.values.curretTime <= 0) {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
     alert("Game Over! O seu resultado foi: " + state.values.result);
   }
+}
+
+function playBackgroundSound() {
+  let backgroundAudio = new Audio('./src/audios/wreck-It_Ralph.mp3');
+  backgroundAudio.volume = 0.1;
+  backgroundAudio.loop = true;
+  backgroundAudio.play();
 }
 
 function playSound(audioName) {
@@ -59,6 +66,7 @@ function addListenerHitBox() {
 }
 
 function initialize() {
+  playBackgroundSound();
   addListenerHitBox();
 };
 

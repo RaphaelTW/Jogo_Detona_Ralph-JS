@@ -1,5 +1,8 @@
 :root {
   --background: #000;
+  --windows: #6fb1c4;
+  --tape: #ffd700;
+  --text: #fff;
 }
 
 .container {
@@ -15,9 +18,9 @@
   align-items: center;
   height: 90px;
   width: 100%;
-  background-color: #000;
-  color: #fff;
-  border-bottom: 5px solid #ffd700;
+  background-color: var(--background);
+  color: var(--text);
+  border-bottom: 5px solid var(--tape);
 }
 
 .panel {
@@ -30,8 +33,9 @@
 .square {
   height: 150px;
   width: 150px;
-  border: 1px solid #000000;
-  background-color: #c1fff5;
+  border: 1px solid var(--background);
+  background-color: var(--windows);
+  background-image: url(../img/windows.png);
 }
 
 .enemy {

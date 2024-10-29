@@ -17,7 +17,6 @@ const state = {
   },
 };
 
-// Atualizar o estado do jogo
 function countDown() {
   state.values.curretTime--;
   state.view.timeLeft.textContent = state.values.curretTime;
@@ -29,22 +28,12 @@ function countDown() {
   }
 }
 
-// som de fundo
-function playBackgroundSound() {
-  let backgroundAudio = new Audio('./src/audios/wreck-It_Ralph.mp3');
-  backgroundAudio.volume = 0.1;
-  backgroundAudio.loop = true;
-  backgroundAudio.play();
-}
-
-// Som de colisão com o inimigo
 function playSound(audioName) {
   let audio = new Audio(`./src/audios/${audioName}.m4a`);
   audio.volume = 0.2;
   audio.play();
 }
 
-// Gerar um quadrado aleatório para ser o inimigo
 function randomSquare() {
   state.view.squares.forEach((square) => {
     square.classList.remove("enemy");
@@ -56,11 +45,10 @@ function randomSquare() {
   state.values.hitPosition = randomSquare.id;
 }
 
-// Adicionar evento de clique nos quadrados para verificar se o hitbox foi acertado
 function addListenerHitBox() {
   state.view.squares.forEach((square) => {
     square.addEventListener("mousedown", () => {
-      if(square.id === state.values.hitPosition) {
+      if (square.id === state.values.hitPosition) {
         state.values.result++;
         state.view.score.textContent = state.values.result;
         state.values.hitPosition = null;
@@ -71,8 +59,7 @@ function addListenerHitBox() {
 }
 
 function initialize() {
-  playBackgroundSound();
   addListenerHitBox();
-};
+}
 
 initialize();

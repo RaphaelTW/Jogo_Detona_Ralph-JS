@@ -1,9 +1,4 @@
-:root {
-  --background: #000;
-  --windows: #6fb1c4;
-  --tape: #ffd700;
-  --text: #fff;
-}
+@import url('reset.css');
 
 .container {
   display: flex;

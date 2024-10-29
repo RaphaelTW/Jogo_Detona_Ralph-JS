@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --background: #000;
+  --windows: #6fb1c4;
+  --tape: #ffd700;
+  --text: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
